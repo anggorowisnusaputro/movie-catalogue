@@ -20,7 +20,7 @@ pipeline {
             steps {
                 script {
                     sshPublisher(
-                        publisher; [
+                        publisher: [
                         sshPublisherDesc(
                             configName: 'developmentdesi',
                             verbose: false,
