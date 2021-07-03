@@ -1,3 +1,5 @@
+def REMOTE_DIR = ' /var/www/html'
+
 pipeline {
     agent any
     stages {
@@ -16,7 +18,22 @@ pipeline {
         }
         stage("Deploy"){
             steps {
-                echo "Deploying"
+                script {
+                    sshPublisher(
+                        publisher; [
+                        sshPublisherDesc(
+                            configName: 'developmentdesi',
+                            verbose: false,
+                            transfer: [
+                                sshTransfer(
+                                    sourceFiles: "dist/*",
+                                    remoteDirectory: "${REMOTE_DIR}",
+                                    execTieout: 120000,
+                                )
+                            ]
+                        )
+                    ]
+                )
             }
         }
     }
