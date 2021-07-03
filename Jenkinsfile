@@ -27,7 +27,6 @@ pipeline {
                             transfer: [
                                 sshTransfer(
                                     sourceFiles: "dist/*",
-                                    remoteDirectory: "${REMOTE_DIR}",
                                     execTieout: 120000,
                                 )
                             ]
