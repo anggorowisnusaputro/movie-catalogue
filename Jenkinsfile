@@ -1,4 +1,4 @@
-def REMOTE_DIR = ' /var/www/html'
+def REMOTE_DIR = ' /home/ubuntu/movie'
 
 pipeline {
     agent any
