@@ -1,4 +1,4 @@
-def REMOTE_DIR = ' /home/ubuntu/movie'
+def REMOTE_DIR = 'movie'
 
 pipeline {
     agent any
