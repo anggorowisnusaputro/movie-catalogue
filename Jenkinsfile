@@ -21,20 +21,20 @@ pipeline {
                 script {
                     sshPublisher(
                         publishers: [
-                        sshPublisherDesc(
-                            configName: 'developmentdesi',
-                            verbose: false,
-                            transfer: [
-                                sshTransfer(
-                                    sourceFiles: "dist/*",
-                                    execTieout: 120000,
-                                )
-                            ]
-                        )
-                    ]
-                )
+                            sshPublisherDesc(
+                                configName: 'developmentdesi',
+                                verbose: false,
+                                transfers: [
+                                    sshTransfer(
+                                        sourceFiles: "dist/*",
+                                        execTimeout: 120000,
+                                    )
+                                ]
+                            )
+                        ]
+                    )
+                }
             }
         }
     }
-}
 }
